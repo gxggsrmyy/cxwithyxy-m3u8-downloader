@@ -559,6 +559,8 @@ new Vue({
         {
           let tempDownloader = await fetch(this.aesConf.uri, {
             method: 'get',
+            mode: 'cors', // no-cors, cors, *same-origin
+            credentials: 'same-origin', // include, same-origin, *omit
             responseType: 'arraybuffer'
           })
           this.aesConf.key = await tempDownloader.arrayBuffer()
